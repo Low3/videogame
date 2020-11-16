@@ -572,7 +572,7 @@ Select enemy:
 &lt;&lt;else&gt;&gt;
 You need 10 shekels! &lt;&lt;endif&gt;&gt;&lt;&lt;endnobr&gt;&gt;
 
-[[Center]]</tw-passagedata><tw-passagedata pid="6" name="Character Creation" tags="" position="0,250" size="100,100">Select your species:
+[[Center]]</tw-passagedata><tw-passagedata pid="6" name="Character Creation" tags="" position="125,250" size="100,100">Select your species:
 [[Human|Character Creation][$player.species to &quot;Human&quot;]]
 [[Fox|Character Creation][$player.species to &quot;Fox&quot;]]
 [[Cat|Character Creation][$player.species to &quot;Cat&quot;]]
@@ -668,11 +668,9 @@ You have $player.gems gems
 &lt;&lt;set $location&gt;&gt;
 
 &lt;&lt;include &quot;EnemiesInit&quot;&gt;&gt;
-</tw-passagedata><tw-passagedata pid="10" name="Debug room" tags="" position="0,375" size="100,100">Room with various &lt;span class=&quot;glitch&quot; data-text=&quot;autism&quot;&gt;debug&lt;/span&gt; buttons.
+</tw-passagedata><tw-passagedata pid="10" name="Debug room" tags="" position="0,575" size="100,100">Room with various &lt;span class=&quot;glitch&quot; data-text=&quot;autism&quot;&gt;debug&lt;/span&gt; buttons.
 
-
-
-[[Full gear|Debug room][$player.wpn = $axe, $player.armor = $leather, $player.exp +=1000, $player.money += 1000, $player.gems += 1000, $player.hp = $player.maxhp]]
+[[Give All|Debug room][$inventory.push($stick), $inventory.push($spork), $inventory.push($axe), $inventory.push($headCap), $inventory.push($headLeather), $inventory.push($chestCloth), $inventory.push($chestPadded), $inventory.push($outerHoodie), $inventory.push($outerLeather), $inventory.push($handsCloth), $inventory.push($handsLeather), $inventory.push($legsJeans), $inventory.push($legsLeather), $inventory.push($feetSneakers), $inventory.push($feetLeather), $inventory.push($neckArmor), $inventory.push($neckHealth), $inventory.push($ringArmor), $inventory.push($ringHealth), $player.exp +=1000, $player.money += 1000, $player.gems += 1000, $player.hp = $player.maxhp]]
 
 [[+100 shekels|Debug room][$player.money += 100]]
 [[+100 gems|Debug room][$player.gems += 100]]
@@ -710,9 +708,9 @@ You and $enemy.name go at it!
 &lt;&lt;run Health($enemy.hp, $enemy.maxhp, &quot;horizontalhealthbar&quot;, true)&gt;&gt;
 
 &lt;&lt;set $dmgtkn to 1&gt;&gt;
-&lt;&lt;if ($enemy.atk - $player.armor.defense) lte 0&gt;&gt; &lt;&lt;set $dmgtkn to 1&gt;&gt;
+&lt;&lt;if ($enemy.atk - $totalArmor) lte 0&gt;&gt; &lt;&lt;set $dmgtkn to 1&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $dmgtkn to ($enemy.atk - $player.armor.defense)&gt;&gt;
+&lt;&lt;set $dmgtkn to ($enemy.atk - $totalArmor)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;
@@ -765,9 +763,9 @@ You and $enemy.name go at it!
 &lt;&lt;run Health($enemy.hp, $enemy.maxhp, &quot;horizontalhealthbar&quot;, true)&gt;&gt;
 
 &lt;&lt;set $dmgtkn to 1&gt;&gt;
-&lt;&lt;if ($enemy.atk - $player.armor.defense) lte 0&gt;&gt; &lt;&lt;set $dmgtkn to 1&gt;&gt;
+&lt;&lt;if ($enemy.atk - $totalArmor) lte 0&gt;&gt; &lt;&lt;set $dmgtkn to 1&gt;&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;set $dmgtkn to ($enemy.atk - $player.armor.defense)&gt;&gt;
+&lt;&lt;set $dmgtkn to ($enemy.atk - $totalArmor)&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;/nobr&gt;&gt;
@@ -820,7 +818,7 @@ You and $enemy.name go at it!
 }&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="WeaponsInit" tags="" position="250,0" size="100,100">&lt;&lt;set $fists = {
 	name : &quot;Fists&quot;,
 	type : &quot;wpn&quot;,
-	atk : 2,
+	atk : 1,
 	price : 0
 }&gt;&gt;
 
@@ -1134,7 +1132,7 @@ Ring:
 \
 &lt;&lt;/if&gt;&gt;\
 &lt;&lt;/capture&gt;&gt;\
-&lt;&lt;/for&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="StorySubtitle" tags="" position="0,500" size="100,100">infdev</tw-passagedata><tw-passagedata pid="28" name="HeadArmorInit" tags="" position="375,0" size="100,100">&lt;&lt;set $headNaked = {
+&lt;&lt;/for&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="StorySubtitle" tags="" position="0,250" size="100,100">infdev</tw-passagedata><tw-passagedata pid="28" name="HeadArmorInit" tags="" position="375,0" size="100,100">&lt;&lt;set $headNaked = {
 	name : &quot;Nothing&quot;,
 	type : &quot;GearHead&quot;,
 	defense : 0,
