@@ -732,7 +732,7 @@ You and $enemy.name go at it!
 &lt;&lt;if $player.money gte 100&gt;&gt;[[Buy farm plot|Farm][$ownfarm = 1, $player.money -= 100]] -100 shekels &lt;&lt;else&gt;&gt;You need 100 shekels to buy farm.
 
 [[Outskirts][$time += 5]] 5 min&lt;&lt;/if&gt;&gt;
-&lt;&lt;else&gt;&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="Forest" tags="" position="1500,300" size="100,100">You are this deep: $fdepth
+&lt;&lt;else&gt;&gt;[[Outskirts][$time += 5]] 5 min&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="Forest" tags="" position="1500,300" size="100,100">You are this deep: $fdepth
 
 &lt;&lt;if (random(0,100)+$fdepth) gte 99&gt;&gt;&lt;&lt;set $encounter == true&gt;&gt;A lone wolf emerges from the woods.
 
