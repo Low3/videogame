@@ -622,7 +622,7 @@ You have $player.gems gems
 [[Gambling den]] </tw-passagedata><tw-passagedata pid="9" name="StoryInit" tags="" position="0,0" size="100,100">&lt;&lt;include &quot;WeaponsInit&quot;&gt;&gt;
 &lt;&lt;include &quot;HeadArmorInit&quot;&gt;&gt;
 &lt;&lt;include &quot;ChestArmorInit&quot;&gt;&gt;
-&lt;&lt;include &quot;ChestOverArmorInit&quot;&gt;&gt;
+&lt;&lt;include &quot;OuterArmorInit&quot;&gt;&gt;
 &lt;&lt;include &quot;HandsArmorInit&quot;&gt;&gt;
 &lt;&lt;include &quot;LegArmorInit&quot;&gt;&gt;
 &lt;&lt;include &quot;BootsInit&quot;&gt;&gt;
@@ -639,7 +639,7 @@ You have $player.gems gems
 	maxhp : 10,
 	hp : 999,
 	healpow : 2,
-	money : 0,
+	money : 9999,
 	gems : 0,
 	wpn : $fists,
 	gear : {
@@ -896,34 +896,114 @@ Headgear:
 &lt;&lt;elseif $player.money lte $headCap.price&gt;&gt; You need $headCap.price shekels to buy $headCap.name. 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $player.money gte $headLeather.price&gt;&gt; [[Buy Leather Helmet|Armor Store][$inventory.push($headLeather), $player.money -= $headLeather.price]] -$headLeather.price shekels | $headLeather.defense defense
 &lt;&lt;elseif $player.money lte $headLeather.price&gt;&gt; You need $headLeather.price shekels to buy $headLeather.name. 
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 
+Shirts:
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $chestCloth.price&gt;&gt; [[Buy Tshirt|Armor Store][$inventory.push($chestCloth), $player.money -= $chestCloth.price]] -$chestCloth.price shekels | $chestCloth.defense defense
+&lt;&lt;elseif $player.money lte $chestCloth.price&gt;&gt; You need $chestCloth.price shekels to buy $chestCloth.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $chestPadded.price&gt;&gt; [[Buy Padded Shirt|Armor Store][$inventory.push($chestPadded), $player.money -= $chestPadded.price]] -$chestPadded.price shekels | $chestPadded.defense defense
+&lt;&lt;elseif $player.money lte $chestPadded.price&gt;&gt; You need $chestPadded.price shekels to buy $chestPadded.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+
+Outerwear:
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $outerHoodie.price&gt;&gt; [[Buy Hoodie|Armor Store][$inventory.push($outerHoodie), $player.money -= $outerHoodie.price]] -$outerHoodie.price shekels | $outerHoodie.defense defense
+&lt;&lt;elseif $player.money lte $outerHoodie.price&gt;&gt; You need $outerHoodie.price shekels to buy $outerHoodie.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $outerLeather.price&gt;&gt; [[Buy Leather Cuirass|Armor Store][$inventory.push($outerLeather), $player.money -= $outerLeather.price]] -$outerLeather.price shekels | $outerLeather.defense defense
+&lt;&lt;elseif $player.money lte $outerLeather.price&gt;&gt; You need $outerLeather.price shekels to buy $outerLeather.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+
+Gloves:
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $handsCloth.price&gt;&gt; [[Buy Cloth Gloves|Armor Store][$inventory.push($handsCloth), $player.money -= $handsCloth.price]] -$handsCloth.price shekels | $handsCloth.defense defense
+&lt;&lt;elseif $player.money lte $handsCloth.price&gt;&gt; You need $handsCloth.price shekels to buy $handsCloth.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $handsLeather.price&gt;&gt; [[Buy Leather Gloves|Armor Store][$inventory.push($handsLeather), $player.money -= $handsLeather.price]] -$handsLeather.price shekels | $handsLeather.defense defense
+&lt;&lt;elseif $player.money lte $handsLeather.price&gt;&gt; You need $handsLeather.price shekels to buy $handsLeather.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+
+Legwear:
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $legsJeans.price&gt;&gt; [[Buy Jeans|Armor Store][$inventory.push($legsJeans), $player.money -= $legsJeans.price]] -$legsJeans.price shekels | $legsJeans.defense defense
+&lt;&lt;elseif $player.money lte $legsJeans.price&gt;&gt; You need $legsJeans.price shekels to buy $legsJeans.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $legsLeather.price&gt;&gt; [[Buy Leather Greaves|Armor Store][$inventory.push($legsLeather), $player.money -= $legsLeather.price]] -$legsLeather.price shekels | $legsLeather.defense defense
+&lt;&lt;elseif $player.money lte $legsLeather.price&gt;&gt; You need $legsLeather.price shekels to buy $legsLeather.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+
+Footwear:
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $feetSneakers.price&gt;&gt; [[Buy Sneakers|Armor Store][$inventory.push($feetSneakers), $player.money -= $feetSneakers.price]] -$feetSneakers.price shekels | $feetSneakers.defense defense
+&lt;&lt;elseif $player.money lte $feetSneakers.price&gt;&gt; You need $feetSneakers.price shekels to buy $feetSneakers.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $feetLeather.price&gt;&gt; [[Buy Leather Boots|Armor Store][$inventory.push($feetLeather), $player.money -= $feetLeather.price]] -$feetLeather.price shekels | $feetLeather.defense defense
+&lt;&lt;elseif $player.money lte $feetLeather.price&gt;&gt; You need $feetLeather.price shekels to buy $feetLeather.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+
 [[Back to Market District|Market District]]</tw-passagedata><tw-passagedata pid="25" name="General Store" tags="" position="475,325" size="100,100">You are in the general store.
 
+Gems:
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $player.money gte 10&gt;&gt;
 [[Buy gem|General Store][$player.gems += 1, $player.money -= 10]] -10 shekels
 &lt;&lt;else&gt;&gt;
 You need 10 shekels to buy a gem. &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $player.money gte 100&gt;&gt;
 [[Buy 10 gems|General Store][$player.gems += 10, $player.money -= 100]] -100 shekels
 &lt;&lt;else&gt;&gt;
 You need 100 shekels to buy a gem. &lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $player.money gte 1000&gt;&gt;
 [[Buy 100 gems|General Store][$player.gems += 100, $player.money -= 1000]] -1000 shekels
 &lt;&lt;else&gt;&gt;
 You need 1000 shekels to buy a gem. &lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+
+Accesories:
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $neckArmor.price&gt;&gt; [[Buy Amulet of Protection|General Store][$inventory.push($neckArmor), $player.money -= $neckArmor.price]] -$neckArmor.price shekels | $neckArmor.defense defense
+&lt;&lt;elseif $player.money lte $neckArmor.price&gt;&gt; You need $neckArmor.price shekels to buy $neckArmor.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $neckHealth.price&gt;&gt; [[Buy Amulet of Health|General Store][$inventory.push($neckHealth), $player.money -= $neckHealth.price]] -$neckHealth.price shekels | $neckHealth.defense defense
+&lt;&lt;elseif $player.money lte $neckHealth.price&gt;&gt; You need $neckHealth.price shekels to buy $neckHealth.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $ringArmor.price&gt;&gt; [[Buy Ring of Protection|General Store][$inventory.push($ringArmor), $player.money -= $ringArmor.price]] -$ringArmor.price shekels | $ringArmor.defense defense
+&lt;&lt;elseif $player.money lte $ringArmor.price&gt;&gt; You need $ringArmor.price shekels to buy $ringArmor.name. 
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $player.money gte $ringHealth.price&gt;&gt; [[Buy Ring of Health|General Store][$inventory.push($ringHealth), $player.money -= $ringHealth.price]] -$ringHealth.price shekels | $ringHealth.defense defense
+&lt;&lt;elseif $player.money lte $ringHealth.price&gt;&gt; You need $ringHealth.price shekels to buy $ringHealth.name. 
+&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 
 [[Back to Market District|Market District]]</tw-passagedata><tw-passagedata pid="26" name="Inventory" tags="" position="125,125" size="100,100">&#39;&#39;You are equiped with&#39;&#39;:
@@ -1130,7 +1210,7 @@ Ring:
 	type : &quot;GearFeet&quot;,
 	defense : 2,
 	price : 200
-}&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="ChestOverArmorInit" tags="" position="625,0" size="100,100">&lt;&lt;set $outerNaked = {
+}&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="OuterArmorInit" tags="" position="625,0" size="100,100">&lt;&lt;set $outerNaked = {
 	name : &quot;Nothing&quot;,
 	type : &quot;GearOuter&quot;,
 	defense : 0,
